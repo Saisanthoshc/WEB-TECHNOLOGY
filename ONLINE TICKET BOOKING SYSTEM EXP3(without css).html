@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Event Ticket Booking System</title>
+</head>
+<body>
+
+    <header>
+        <center>
+            <h1>EventEase Booking</h1>
+            <p>Book Your Favorite Events Anytime, Anywhere</p>
+        </center>
+    </header>
+
+    <hr>
+
+    <nav>
+        <center>
+            <a href="#home">Home</a> |
+            <a href="#book">Book Events</a> |
+            <a href="#status">Check Booking Status</a> |
+            <a href="#cancel">Cancel Booking</a> |
+            <a href="#contact">Contact Us</a>
+        </center>
+    </nav>
+
+    <hr>
+
+    <!-- Event Search Section -->
+    <section id="book">
+        <h2>Search for Events</h2>
+        <form action="searchEventServlet" method="GET">
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td><label for="category">Event Category:</label></td>
+                    <td>
+                        <select name="category" id="category">
+                            <option value="">-- Select Category --</option>
+                            <option value="music">Music</option>
+                            <option value="conference">Conference</option>
+                            <option value="sports">Sports</option>
+                            <option value="workshop">Workshop</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="city">City:</label></td>
+                    <td>
+                        <select name="city" id="city">
+                            <option value="">-- Select City --</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="bangalore">Bangalore</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="delhi">Delhi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="date">Event Date:</label></td>
+                    <td><input type="date" id="date" name="event_date"></td>
+                </tr>
+                <tr>
+                    <td><label for="type">Ticket Type:</label></td>
+                    <td>
+                        <input type="radio" id="regular" name="type" value="regular" checked>
+                        <label for="regular">Regular</label>
+                        <input type="radio" id="vip" name="type" value="vip">
+                        <label for="vip">VIP</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Search Events">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <br>
+    <hr>
+
+    <!-- Available Events Section -->
+    <section>
+        <h2>Available Events</h2>
+        <table border="1" cellpadding="10" width="80%">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Event Name</th>
+                    <th>Time</th>
+                    <th>Venue</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EVT-201</td>
+                    <td>Live Music Concert</td>
+                    <td>06:00 PM</td>
+                    <td>Hyderabad Arena</td>
+                    <td>₹1500</td>
+                    <td><a href="#">Book Now</a></td>
+                </tr>
+                <tr>
+                    <td>EVT-305</td>
+                    <td>Tech Innovators Conference</td>
+                    <td>10:00 AM</td>
+                    <td>Bangalore Convention Hall</td>
+                    <td>₹2500</td>
+                    <td><a href="#">Book Now</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <br>
+    <hr>
+
+    <!-- Attendee Details Section -->
+    <section>
+        <h2>Attendee Details</h2>
+        <form action="eventBookingServlet" method="POST">
+            <table border="0" cellpadding="8">
+                <tr>
+                    <td><label for="fullname">Full Name:</label></td>
+                    <td><input type="text" id="fullname" name="fullname" placeholder="Enter Full Name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="tickets">Number of Tickets:</label></td>
+                    <td><input type="number" id="tickets" name="tickets" min="1" max="10" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" placeholder="example@mail.com" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Mobile Number:</label></td>
+                    <td><input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the Terms and Conditions</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <br>
+                        <input type="submit" value="Confirm Booking">
+                        <input type="reset" value="Reset Form">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <br>
+    <hr>
+
+    <footer>
+        <center>
+            <p>&copy; DESIGNED BY SAI SANTHOSH C</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#help">Help Center</a>
+            </p>
+        </center>
+    </footer>
+
+</body>
+</html>
