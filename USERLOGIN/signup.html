@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Admin Signup</h2>
+
+    <input type="text" id="newUser" placeholder="Create Username">
+    <input type="password" id="newPass" placeholder="Create Password">
+
+    <button onclick="signup()">Sign Up</button>
+
+    <a href="login.html">Back to Login</a>
+</div>
+
+<script>
+    function signup() {
+        const user = document.getElementById("newUser").value;
+        const pass = document.getElementById("newPass").value;
+
+        if (user === "" || pass === "") {
+            alert("Please fill all fields");
+            return;
+        }
+
+        localStorage.setItem("adminUser", user);
+        localStorage.setItem("adminPass", pass);
+
+        alert("Signup Successful! Please Login.");
+        window.location.href = "user.html";
+    }
+</script>
+
+</body>
+</html>
