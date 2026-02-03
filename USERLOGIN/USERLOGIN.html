@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Online Event Ticket Booking</title>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: var(--white);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .error {
+            margin-top: 15px;
+            text-align: center;
+            color: red;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>Admin Login</h2>
+
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" id="username">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password">
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <div id="error" class="error"></div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "saisanthosh" && password === "12345") {
+                // Redirect to main website page
+                window.location.href = "ONLINE TICKET BOOKING SYSTEM EXP3(with css).html";
+            } else {
+                document.getElementById("error").innerText =
+                    "Invalid username or password!";
+            }
+        }
+    </script>
+
+</body>
+</html>
