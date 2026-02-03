@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration Form</title>
+    <meta charset="UTF-8">
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        function validateForm() {
+
+            var firstName = document.getElementById("fname").value;
+            var lastName = document.getElementById("lname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+
+            // First Name validation
+            var namePattern = /^[A-Za-z]+$/;
+            if (!firstName.match(namePattern) || firstName.length < 6) {
+                alert("First Name must contain only alphabets and at least 6 characters");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            // Email validation
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                alert("Invalid Email format. Use name@domain.com");
+                return false;
+            }
+
+            // Mobile number validation
+            var mobilePattern = /^[0-9]{10}$/;
+            if (!mobile.match(mobilePattern)) {
+                alert("Mobile Number must contain exactly 10 digits");
+                return false;
+            }
+
+            // Last Name validation
+            if (lastName == "") {
+                alert("Last Name cannot be empty");
+                return false;
+            }
+
+            // Address validation
+            if (address == "") {
+                alert("Address cannot be empty");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>User Registration</h2>
+
+        <form onsubmit="return validateForm()">
+
+            First Name:
+            <input type="text" id="fname">
+
+            Last Name:
+            <input type="text" id="lname">
+
+            Password:
+            <input type="password" id="password">
+
+            E-mail:
+            <input type="text" id="email">
+
+            Mobile Number:
+            <input type="text" id="mobile">
+
+            Address:
+            <textarea id="address"></textarea>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+
+        </form>
+    </div>
+
+</body>
+</html>
